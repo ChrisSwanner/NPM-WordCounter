@@ -1,8 +1,8 @@
 
 
 export function wordCount(entry) {
-  wordArray = entry.split(" ");
-  count = wordArray.length;
+  var wordArray = entry.split(" ");
+  var count = wordArray.length;
   return count;
 }
 
@@ -11,9 +11,9 @@ export function isLetter(str) {
 }
 
 export function vowelCount(entry) {
-  lowerEntry = entry.toLowerCase();
-  charArray = lowerEntry.split("");
-  vowelArray = [];
+  var lowerEntry = entry.toLowerCase();
+  var charArray = lowerEntry.split("");
+  var vowelArray = [];
 
   charArray.forEach(function(char){
     if (char.match(/^[aeiou]$/i)) {
@@ -25,9 +25,9 @@ export function vowelCount(entry) {
 }
 
 export function consCount(entry) {
-  lowerEntry = entry.toLowerCase();
-  charArray = lowerEntry.split("");
-  conArray = [];
+  var lowerEntry = entry.toLowerCase();
+  var charArray = lowerEntry.split("");
+  var conArray = [];
 
   charArray.forEach(function(char){
     if (char.match(/^[bcdfghjklmnpqrstvwxyz]$/i)) {
@@ -39,13 +39,14 @@ export function consCount(entry) {
 }
 
 export function getTeaser (entry) {
-  entryArray = entry.split(" ");
-  resultArray = [];
-  for (i = 0; i < 8; i++) {
+  var entryArray = entry.split(" ");
+  var resultArray = [];
+  var i;
+  for (i = 0; i <= 8; i++) {
+    resultArray.push(entryArray[i]);
     if (i>0 && entryArray[i-1].includes('.')){
       break;
     }
-    resultArray.push(entryArray[i]);
   }
 
   return resultArray.join(" ");
